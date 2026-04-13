@@ -11,6 +11,19 @@ body{
     padding: 0;
 }
 
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#headerlist{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
 #sec-sobre{
     text-align: center;
     max-width: 600px;
@@ -23,9 +36,14 @@ body{
 
 #div-cards{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
     article{
-        width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 90%;
         background-color: white;
         color: black;
         padding: 10px;
@@ -47,4 +65,28 @@ footer{
     margin: 10px;
     text-align: center;
     background-color: var(--cor-principal);
+}
+
+@media (min-width: 470px){
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 600px){
+    #div-cards{
+        flex-direction: row;
+        align-items: baseline;
+        article{
+            width: 300px;
+        }
+    }
+
+    .limite-texto{
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
 }
